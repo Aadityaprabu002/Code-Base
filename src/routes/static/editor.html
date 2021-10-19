@@ -7,24 +7,27 @@
 </head>
 <body>
     <form action="/editor" method="POST">
-        <div>   
+        <div>
+
             <select name="language">
                 <option value="C">C</option>
                 <option value="CPP">CPP</option>
                 <option value="PY">PY</option>
                 <option value="JAVA">JAVA</option>
             </select>
-            <textarea name="code" id="" cols="30" rows="10"></textarea>
             <button type="submit">Run Code</button>
-        </div>
-        <textarea>
-            {{ .Msg }}
-        </textarea>
+
+        </div><br>
+
+        CODE: <br>
+        <textarea name="code" id="" cols="50" rows="20">{{.Code}}</textarea><br><br>
+        OUTPUT: <br><textarea cols="50" rows="10">{{.Result}}</textarea><br><br>
+        {{.Time}}
     </form>
-   
+
     <br>
     <div>
-        
+
     </div>
 </body>
 </html>

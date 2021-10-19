@@ -1,0 +1,1 @@
+g++ ./exec/main.cpp -o ./executor.exe

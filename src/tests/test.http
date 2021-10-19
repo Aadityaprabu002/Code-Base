@@ -1,0 +1,11 @@
+# Simple Get Request
+GET http://localhost:4040/
+
+###
+
+# Python HI Test
+POST http://localhost:4040/
+Content-Type: application/x-www-form-urlencoded
+
+language=PY
+&code=print%28%27HI%27%29

@@ -9,8 +9,12 @@
 #define PYTHON_INTERPRETER "python"
 #define JAVA_INTERPRETER "java"
 #define TIMEOUT_CMD " timeout "
-#define LINUX_USER_FRONT_COVER ""
-#define LINUX_USER_BACK_COVER ""
+// Set HomeDir Group Readable
+// Create A user code-base add code-base user to the muthu grp who is the sudo // doers but code-base should not be sudo doer
+// command:
+// sudo runuser -m code-base -c 'python main.py'
+#define LINUX_USER_FRONT_COVER "sudo runuser -m code-base -c '"
+#define LINUX_USER_BACK_COVER "'"
 
 #if _WIN32
 #endif

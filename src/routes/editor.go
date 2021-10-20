@@ -51,17 +51,13 @@ func Editor(w http.ResponseWriter, r *http.Request) {
 		log.Println("Wrote ", n, "Bytes Into ", tmpfile.Name())
 		handlerErr(err)
 
-		// log.Println(exec.Command("chmod", "777", tmpfile.Name()).String())
+		log.Println(exec.Command("chmod", "770", tmpfile.Name()).Output())
 
-		// err = exec.Command("chmod", "777", tmpfile.Name()).Run()
-		// handlerErr(err)
+		log.Println(exec.Command("chown", "muthu:muthu", tmpfile.Name()).Output())
 
-		// err = exec.Command("chown", "code-base", tmpfile.Name()).Run()
-		// handlerErr(err)
-
-		// ls, err := exec.Command("ls", "-al").Output()
-		// handlerErr(err)
-		// log.Println(string(ls))
+		out, err := exec.Command("ls", "-al").Output()
+		handlerErr(err)
+		log.Println(string(out))
 
 		err = tmpfile.Close()
 		handlerErr(err)
